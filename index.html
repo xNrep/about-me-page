@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A personal About Me page for [YOUR NAME]." />
+  <title>About [YOUR NAME]</title>
+  <style>
+    :root {
+      --blue-900: #12355b;
+      --blue-700: #1769aa;
+      --blue-500: #4da3d9;
+      --blue-100: #e8f5ff;
+      --blue-50: #f6fbff;
+      --ink: #183247;
+      --muted: #5d7485;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(36, 105, 153, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--blue-50);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: var(--blue-700); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(1100px, calc(100% - 2rem)); margin: 0 auto; }
+
+    header {
+      background: linear-gradient(135deg, #dff3ff 0%, #f7fcff 60%, #c8eaff 100%);
+      min-height: 72vh;
+      display: grid;
+      place-items: center;
+      padding: 5rem 0;
+    }
+
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1.25rem 0;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { color: var(--blue-900); font-weight: 800; letter-spacing: .04em; }
+    nav ul { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+    nav a { color: var(--blue-900); font-weight: 600; }
+
+    .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 4rem; align-items: center; }
+    .eyebrow { color: var(--blue-700); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; font-size: .8rem; }
+    h1 { color: var(--blue-900); font-size: clamp(2.8rem, 8vw, 5.5rem); line-height: 1.02; margin: .5rem 0 1.25rem; }
+    h2 { color: var(--blue-900); font-size: clamp(1.8rem, 4vw, 2.5rem); margin-top: 0; }
+    .lead { color: var(--muted); font-size: 1.2rem; max-width: 38rem; }
+    .button { display: inline-block; margin-top: 1rem; padding: .8rem 1.2rem; border-radius: 999px; background: var(--blue-700); color: var(--white); font-weight: 700; box-shadow: 0 8px 20px rgba(23, 105, 170, .22); }
+    .button:hover { background: var(--blue-900); text-decoration: none; }
+    .portrait { width: min(100%, 300px); aspect-ratio: 1; margin: auto; border: 12px solid rgba(255,255,255,.8); border-radius: 50%; background: var(--blue-100); display: grid; place-items: center; color: var(--blue-700); text-align: center; box-shadow: var(--shadow); }
+
+    section { padding: 5rem 0; }
+    .section-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 3rem; align-items: start; }
+    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .card { background: var(--white); border: 1px solid #d7ecf8; border-radius: 1rem; padding: 1.5rem; box-shadow: var(--shadow); }
+    .card h3 { color: var(--blue-700); margin-top: 0; }
+    .tag { display: inline-block; background: var(--blue-100); color: var(--blue-900); border-radius: 999px; padding: .35rem .75rem; margin: .25rem; font-size: .9rem; font-weight: 600; }
+    .contact { background: #dff3ff; text-align: center; }
+    footer { padding: 1.5rem 0; color: var(--muted); text-align: center; font-size: .9rem; }
+
+    @media (max-width: 720px) {
+      nav ul { display: none; }
+      .hero, .section-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero { text-align: center; }
+      .lead { margin-left: auto; margin-right: auto; }
+      .card-grid { grid-template-columns: 1fr; }
+      header { min-height: 100vh; }
+    }
+  </style>
+</head>
+<body>
+  <header id="top">
+    <nav aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a class="brand" href="#top">[YOUR INITIALS]</a>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#interests">Interests</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container hero">
+      <div>
+        <p class="eyebrow">Hello, I'm</p>
+        <h1>[YOUR NAME]</h1>
+        <p class="lead">[Write a short, friendly introduction here. Mention what you do, what you care about, or what you are currently working on.]</p>
+        <a class="button" href="#about">Learn more about me</a>
+      </div>
+      <div class="portrait" role="img" aria-label="Placeholder for your profile photo">[YOUR<br />PHOTO]</div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container section-grid">
+        <div>
+          <p class="eyebrow">A little bit</p>
+          <h2>About me</h2>
+        </div>
+        <div>
+          <p>[Tell your story here. This can be a few sentences about your background, your journey, and the things that make you unique.]</p>
+          <p>[Add another paragraph about your goals, values, or the kind of work and people you enjoy.]</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests" aria-labelledby="interests-title">
+      <div class="container">
+        <p class="eyebrow">What I enjoy</p>
+        <h2 id="interests-title">My interests</h2>
+        <div class="card-grid">
+          <article class="card"><h3>[Interest One]</h3><p>[A short description of this interest or hobby.]</p></article>
+          <article class="card"><h3>[Interest Two]</h3><p>[A short description of this interest or hobby.]</p></article>
+          <article class="card"><h3>[Interest Three]</h3><p>[A short description of this interest or hobby.]</p></article>
+        </div>
+        <div style="margin-top: 1.5rem;">
+          <span class="tag">[Skill]</span><span class="tag">[Skill]</span><span class="tag">[Skill]</span><span class="tag">[Favorite Tool]</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <p class="eyebrow">Let's connect</p>
+        <h2>Get in touch</h2>
+        <p>[Invite visitors to contact you and add your preferred social links below.]</p>
+        <p><a href="mailto:your.email@example.com">your.email@example.com</a> · <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">© [YEAR] [YOUR NAME]. Made with care.</div></footer>
+</body>
+</html>
